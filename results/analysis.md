@@ -1,0 +1,13 @@
+## 15.1 Correctness
+
+**How did the team verify that the three strategies produce equivalent results?**
+The team verified equivalence through automated testing and runtime assertions[cite: 1]. The test class `ConcurrentBlackListSearchTest.java` automatically verifies that fixed pools of 2, 4, and 8 threads, as well as the virtual thread strategy, produce the exact same matches as the sequential baseline[cite: 1]. The tests assert that exactly 100 providers are consulted, matching IDs contain no duplicates, and matches are ordered[cite: 1]. Additionally, `BenchmarkRunner.java` verifies equivalence dynamically during measured runs by comparing results against the first execution, throwing an `IllegalStateException` if they differ[cite: 1].
+
+**Why can concurrent tasks return matches in a different order?**
+Concurrent tasks execute independently, and their completion order is inherently unpredictable due to thread scheduling and varying workloads[cite: 1]. In this laboratory, `MockBlackListProvider` simulates blocking I/O with different latencies depending on the provider's ID (`20 + Math.floorMod(id * 29, 181)`)[cite: 1]. Because some providers naturally take longer to respond than others, faster tasks will finish and return their matches first, regardless of the order in which they were submitted to the executor[cite: 1].
+
+**What mechanism or design prevented lost or duplicated matches?**
+Lost or duplicated matches were prevented by strictly avoiding unsafe shared mutable state[cite: 1]. In `FixedPoolBlackListSearch`, each concurrent task uses its own local `ArrayList` to collect matches and then returns them via a `PartialResult` record[cite: 1]. In `VirtualThreadBlackListSearch`, each task returns a single `Integer` (the provider ID) or `null`[cite: 1]. In both implementations, the main thread waits for all tasks to complete using `ExecutorService.invokeAll()` or tracking a list of futures, and then sequentially aggregates the returned values via `Future.get()`[cite: 1]. This design completely eliminates race conditions[cite: 1].
+
+**Why should performance not be compared before proving functional equivalence?**
+As explicitly stated in the problem statement, correctness comes before performance, and a benchmark is fundamentally invalid if the compared strategies do not produce equivalent results[cite: 1]. If a concurrent strategy were bugged—for instance, if it skipped providers, failed to wait for all threads, or lost matches due to race conditions—it would likely finish faster than the sequential baseline[cite: 1]. Comparing performance under these conditions would lead to false conclusions, as the "faster" algorithm is not actually doing the same amount of work[cite: 1].
