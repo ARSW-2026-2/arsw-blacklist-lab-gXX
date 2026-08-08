@@ -588,13 +588,13 @@ Complete:
 
 | Item | Value |
 |---|---|
-| Operating system | Pending |
-| CPU model | Pending |
-| Logical processors | Pending |
-| RAM | Pending |
-| JDK vendor and version | Pending |
-| Maven version | Pending |
-| Measurement date | Pending |
+| Operating system | Windows 11 |
+| CPU model | AMD Ryzen 7 7730U with Radeon Graphics |
+| Logical processors | 16 |
+| RAM | 16 GB |
+| JDK vendor and version | 21.0.8 |
+| Maven version | 3.9.12 |
+| Measurement date | 7-08-2026 |
 
 ---
 
@@ -602,9 +602,9 @@ Complete:
 
 | Student | GitHub username | Main contribution | Relevant commits |
 |---|---|---|---|
-| Pending | Pending | Pending | Pending |
-| Pending | Pending | Pending | Pending |
-| Pending | Pending | Pending | Pending |
+| Cristian Aristizabal | Cristian-Aristi | Implementation Virtual Threads | 1. Carry out the procedures using the different commands. <br> 2. Implemente VirtualThreadBlackListSearch.java de Java 2  |
+| Daniel Peña | KronorCR | Automated verification | 1. test:pruebas unitarias para implementaciones concurrentes (Task 3). <br> 2. docs: add correctness analysis for concurrent strategies |
+| Santiago Pinzón | els4nty | Implementation Fixed Pooling | 1. Se realizó la implementación de la clase FixedPoolBlackListSearch. <br> 2. Realizo implementación BenchmarkRunner |
 
 Each student must have at least two meaningful commits.
 
