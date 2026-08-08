@@ -727,9 +727,13 @@ AI tools may be used as support, but every student must understand and defend th
 
 Complete the following table:
 
+## 24. Use of artificial intelligence
+
 | Tool | Purpose | Main prompts or activities | Validation performed | Changes made by the team |
-|---|---|---|---|---|
-| Pending | Pending | Pending | Pending | Pending |
+| :--- | :--- | :--- | :--- | :--- |
+| Gemini / ChatGPT | Code comprehension and API syntax | "Explain how to implement ExecutorService and Future for concurrent thread management", "How to measure elapsed time accurately in Java?" | Reviewed the Java documentation for `ExecutorService` and verified that the suggested methods did not introduce race conditions. | Adapted the generic thread pool examples to our specific `PartialResult` logic, ensuring no shared mutable state. |
+| Gemini / ChatGPT | Testing and implementation verification | "Check if this JUnit test properly verifies concurrent execution", "Clarify how MockBlackListProvider works" | Ran `mvn clean test` to ensure all tests passed and verified that results were deterministic. | Modified the test assertions to strictly match the 100 providers and 7 matches from our specific baseline. |
+| Gemini / ChatGPT | Documentation, drafting, and translation | "Translate this analysis to professional English", "Improve the formatting of this markdown document" | Cross-checked the translated text to ensure it accurately reflected our actual CSV benchmark results and speedup calculations. | Adjusted the final phrasing to sound natural and integrated the text into the required Markdown structure. |
 
 Requirements:
 
