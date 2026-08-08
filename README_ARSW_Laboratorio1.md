@@ -549,9 +549,9 @@ Each student must add an individual conclusion of 80 to 120 words.
 
 ### Student 3
 
-**Name:** Pending
+**Name:** Santiago Pinzon
 
-> Replace this text with the individual conclusion.
+> Well, this laboratory teach me a lot of new things and in the field of concurrency I feel much more comfortable than in the past, it taught me that threads are a good solution for some problems but in engineering we don't solve in the same way always a problem, so even if it is a good solution it isn't the only solution and the ability of solve any problem is a decision that we must do, counting with pros and cons everything that make us capable to solve a any problem
 
 ---
 
