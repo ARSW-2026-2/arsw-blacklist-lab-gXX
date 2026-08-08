@@ -543,9 +543,9 @@ Each student must add an individual conclusion of 80 to 120 words.
 
 ### Student 2
 
-**Name:** Pending
+**Name:** Daniel Peña
 
-> Replace this text with the individual conclusion.
+> This laboratory showed me that concurrency isn't just about throwing more threads at a problem. Before looking at performance, we must guarantee correctness by avoiding shared mutable state to prevent race conditions. Once the code is correct, the right strategy depends on the bottleneck. For quick, local CPU tasks, the overhead of managing threads makes the sequential approach much better. However, when dealing with blocking external calls (I/O scenarios), Java 21 virtual threads are incredible. They handle waiting times efficiently without the complexity of sizing a fixed pool. Ultimately, architecture is about choosing the right tool for the specific job.
 
 ### Student 3
 
