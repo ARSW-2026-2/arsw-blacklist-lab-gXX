@@ -527,8 +527,7 @@ The conclusion must include:
 
 ### Team conclusion
 
-> Replace this text with the team conclusion.
-
+> As a team we realized that this laboratory opened our minds into a more technological solutions, because we didn't knew some things in this laboratory so investigating, searching and concluding was one of the most enjoyable parts of this laboratory, the challenge of searching, understanding and aplying was the most valuable experience here. Even if we had disagreements or any conflict, as a team we fought to solve it and be in the same page encouraged to look for a solution and achieve it was an inexplicable joy, besides, understanding every solution and learning everything was priceless.
 ---
 
 ## 17. Individual conclusions
