@@ -55,3 +55,20 @@ To clearly see the answers to the questions, we rely on this data from the table
 | No simulated I/O | Virtual threads | N/A | 0.873 ms | 0.701 ms | 0.983 ms | 0.092 ms | 7 | 100 |
 | Simulated I/O | Sequential | 1 | 11201.347 ms | 10998.114 ms | 11560.252 ms | 1.00 | 7 | 100 |
 | Simulated I/O | Virtual threads | N/A | 201.233 ms | 199.544 ms | 203.248 ms | 55.664 | 7 | 100 |
+
+## 15.4 Architectural decision
+
+### **14. Which strategy would the team recommend for a system dominated by blocking external calls?**
+We recommend the Virtual Threads strategy. Virtual threads are designed specifically for blocking I/O operations. When a virtual thread is waiting for an external provider to respond, it releases the underlying OS carrier thread. This allows the system to handle thousands of concurrent requests efficiently without exhausting memory or crashing.
+
+### **15. Which strategy would the team recommend for a small local workload?**
+We recommend the Sequential execution strategy. Because the work is entirely local and very fast (no waiting times), the overhead of creating tasks, coordinating threads, and consolidating results actually takes longer than just executing the work directly in a single thread.
+
+### **16. Under what conditions would a fixed pool still be preferable?**
+A fixed thread pool is preferable for heavy, CPU-bound tasks (like complex mathematical calculations or large data processing). It allows the system to utilize all physical CPU cores while strictly limiting the maximum number of active threads, which prevents the CPU from becoming overloaded by excessive context switching.
+
+### **17. What evidence from the measurements supports the recommendation?**
+In the "Simulated I/O" scenario, Virtual Threads finished the scan significantly faster than the Sequential baseline because they handled the waiting periods concurrently. Conversely, in the "No simulated I/O" scenario, the Sequential strategy was the fastest, and we observed that increasing the number of threads in the Fixed Pool actually worsened the execution time due to the overhead of thread coordination.
+
+### **18 .What limitations prevent generalizing the conclusion to every production system?**
+Our experiment was small, ran on a single machine, and used simulated `Thread.sleep()` pauses instead of real network calls. In a real production system, there are other bottlenecks that this lab does not account for, such as database connection limits, memory constraints, network latency, and external API rate limits, which require more complex architectural evaluations.
