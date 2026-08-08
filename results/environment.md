@@ -42,4 +42,3 @@ Corriendo cada comando con cada estrategía, tuvimos los siguientes resultados:
 | Simulated I/O | Fixed pool | 4 | 2773.540 ms | 2770.816 ms | 2777.763 ms | 4.039 | 7 | 100 |
 | Simulated I/O | Fixed pool | 8 | 1471.788 ms | 1470.578 ms | 1473.455 ms | 7.611 | 7 | 100 |
 | Simulated I/O | Virtual threads | N/A | 201.233 ms | 199.544 ms | 203.248 ms | 55.664 | 7 | 100 |
-
