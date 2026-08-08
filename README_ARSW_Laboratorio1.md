@@ -727,8 +727,6 @@ AI tools may be used as support, but every student must understand and defend th
 
 Complete the following table:
 
-## 24. Use of artificial intelligence
-
 | Tool | Purpose | Main prompts or activities | Validation performed | Changes made by the team |
 | :--- | :--- | :--- | :--- | :--- |
 | Gemini / ChatGPT | Code comprehension and API syntax | "Explain how to implement ExecutorService and Future for concurrent thread management", "How to measure elapsed time accurately in Java?" | Reviewed the Java documentation for `ExecutorService` and verified that the suggested methods did not introduce race conditions. | Adapted the generic thread pool examples to our specific `PartialResult` logic, ensuring no shared mutable state. |
