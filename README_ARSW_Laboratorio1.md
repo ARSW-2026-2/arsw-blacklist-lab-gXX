@@ -445,16 +445,16 @@ Complete this table with actual measurements:
 
 | Scenario | Strategy | Pool size | Average ms | Minimum ms | Maximum ms | Speedup | Matches | Consulted |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| No simulated I/O | Sequential | — | Pending | Pending | Pending | 1.00 | Pending | Pending |
-| No simulated I/O | Fixed pool | 2 | Pending | Pending | Pending | Pending | Pending | Pending |
-| No simulated I/O | Fixed pool | 4 | Pending | Pending | Pending | Pending | Pending | Pending |
-| No simulated I/O | Fixed pool | 8 | Pending | Pending | Pending | Pending | Pending | Pending |
-| No simulated I/O | Virtual threads | — | Pending | Pending | Pending | Pending | Pending | Pending |
-| Simulated I/O | Sequential | — | Pending | Pending | Pending | 1.00 | Pending | Pending |
-| Simulated I/O | Fixed pool | 2 | Pending | Pending | Pending | Pending | Pending | Pending |
-| Simulated I/O | Fixed pool | 4 | Pending | Pending | Pending | Pending | Pending | Pending |
-| Simulated I/O | Fixed pool | 8 | Pending | Pending | Pending | Pending | Pending | Pending |
-| Simulated I/O | Virtual threads | — | Pending | Pending | Pending | Pending | Pending | Pending |
+| No simulated I/O | Sequential | 1 | 0.080 ms | 0.015 ms | 0.186 ms | 1.00 | 7 | 100 |
+| No simulated I/O | Fixed pool | 2 | 0.310 ms | 0.255 ms | 0.407 ms | 0.258 | 7 | 100 |
+| No simulated I/O | Fixed pool | 4 | 0.365 ms | 0.336 ms | 0.436 ms | 0.219 | 7 | 100 |
+| No simulated I/O | Fixed pool | 8 | 0.666 ms | 0.550 ms | 0.740 ms | 0.120 ms | 7 | 100 |
+| No simulated I/O | Virtual threads | N/A | 0.873 ms | 0.701 ms | 0.983 ms | 0.092 ms | 7 | 100 |
+| Simulated I/O | Sequential | 1 | 11201.347 ms | 10998.114 ms | 11560.252 ms | 1.00 | 7 | 100 |
+| Simulated I/O | Fixed pool | 2 | 5541.439 ms | 5515.921 ms | 5627.123 ms | 2.021 | 7 | 100 |
+| Simulated I/O | Fixed pool | 4 | 2773.540 ms | 2770.816 ms | 2777.763 ms | 4.039 | 7 | 100 |
+| Simulated I/O | Fixed pool | 8 | 1471.788 ms | 1470.578 ms | 1473.455 ms | 7.611 | 7 | 100 |
+| Simulated I/O | Virtual threads | N/A | 201.233 ms | 199.544 ms | 203.248 ms | 55.664 | 7 | 100 |
 
 Also include the raw measurements in:
 
@@ -527,8 +527,7 @@ The conclusion must include:
 
 ### Team conclusion
 
-> Replace this text with the team conclusion.
-
+> As a team we realized that this laboratory opened our minds into a more technological solutions, because we didn't knew some things in this laboratory so investigating, searching and concluding was one of the most enjoyable parts of this laboratory, the challenge of searching, understanding and aplying was the most valuable experience here. Even if we had disagreements or any conflict, as a team we fought to solve it and be in the same page encouraged to look for a solution and achieve it was an inexplicable joy, besides, understanding every solution and learning everything was priceless.
 ---
 
 ## 17. Individual conclusions
@@ -537,21 +536,21 @@ Each student must add an individual conclusion of 80 to 120 words.
 
 ### Student 1
 
-**Name:** Pending
+**Name:** Cristian Aristizabal
 
-> Replace this text with the individual conclusion.
+> The laboratory experiment clarified me that the best concurrency strategy depends entirely on the expected workload; it is not simply a matter of using a large number of threads. As observed during the tests involving I/O simulation, execution times were significantly faster with threads; however, in tests without I/O simulation, the sequential strategy performed much better yielding times of 0.080 compared to 0.873 for virtual threads. Consequently, we can conclude that virtual threads are preferable for large-scale operations involving independent blocking tasks, whereas the sequential strategy is the better choice for smaller-scale calculations.
 
 ### Student 2
 
-**Name:** Pending
+**Name:** Daniel Peña
 
-> Replace this text with the individual conclusion.
+> This laboratory showed me that concurrency isn't just about throwing more threads at a problem. Before looking at performance, we must guarantee correctness by avoiding shared mutable state to prevent race conditions. Once the code is correct, the right strategy depends on the bottleneck. For quick, local CPU tasks, the overhead of managing threads makes the sequential approach much better. However, when dealing with blocking external calls (I/O scenarios), Java 21 virtual threads are incredible. They handle waiting times efficiently without the complexity of sizing a fixed pool. Ultimately, architecture is about choosing the right tool for the specific job.
 
 ### Student 3
 
-**Name:** Pending
+**Name:** Santiago Pinzon
 
-> Replace this text with the individual conclusion.
+> Well, this laboratory teach me a lot of new things and in the field of concurrency I feel much more comfortable than in the past, it taught me that threads are a good solution for some problems but in engineering we don't solve in the same way always a problem, so even if it is a good solution it isn't the only solution and the ability of solve any problem is a decision that we must do, counting with pros and cons everything that make us capable to solve a any problem
 
 ---
 
@@ -589,13 +588,13 @@ Complete:
 
 | Item | Value |
 |---|---|
-| Operating system | Pending |
-| CPU model | Pending |
-| Logical processors | Pending |
-| RAM | Pending |
-| JDK vendor and version | Pending |
-| Maven version | Pending |
-| Measurement date | Pending |
+| Operating system | Windows 11 |
+| CPU model | AMD Ryzen 7 7730U with Radeon Graphics |
+| Logical processors | 16 |
+| RAM | 16 GB |
+| JDK vendor and version | 21.0.8 |
+| Maven version | 3.9.12 |
+| Measurement date | 7-08-2026 |
 
 ---
 
@@ -603,9 +602,9 @@ Complete:
 
 | Student | GitHub username | Main contribution | Relevant commits |
 |---|---|---|---|
-| Pending | Pending | Pending | Pending |
-| Pending | Pending | Pending | Pending |
-| Pending | Pending | Pending | Pending |
+| Cristian Aristizabal | Cristian-Aristi | Implementation Virtual Threads | 1. Carry out the procedures using the different commands. <br> 2. Implemente VirtualThreadBlackListSearch.java de Java 2  |
+| Daniel Peña | KronorCR | Automated verification | 1. test:pruebas unitarias para implementaciones concurrentes (Task 3). <br> 2. docs: add correctness analysis for concurrent strategies |
+| Santiago Pinzón | els4nty | Implementation Fixed Pooling | 1. Se realizó la implementación de la clase FixedPoolBlackListSearch. <br> 2. Realizo implementación BenchmarkRunner |
 
 Each student must have at least two meaningful commits.
 
@@ -729,8 +728,10 @@ AI tools may be used as support, but every student must understand and defend th
 Complete the following table:
 
 | Tool | Purpose | Main prompts or activities | Validation performed | Changes made by the team |
-|---|---|---|---|---|
-| Pending | Pending | Pending | Pending | Pending |
+| :--- | :--- | :--- | :--- | :--- |
+| Gemini / ChatGPT | Code comprehension and API syntax | "Explain how to implement ExecutorService and Future for concurrent thread management", "How to measure elapsed time accurately in Java?" | Reviewed the Java documentation for `ExecutorService` and verified that the suggested methods did not introduce race conditions. | Adapted the generic thread pool examples to our specific `PartialResult` logic, ensuring no shared mutable state. |
+| Gemini / ChatGPT | Testing and implementation verification | "Check if this JUnit test properly verifies concurrent execution", "Clarify how MockBlackListProvider works" | Ran `mvn clean test` to ensure all tests passed and verified that results were deterministic. | Modified the test assertions to strictly match the 100 providers and 7 matches from our specific baseline. |
+| Gemini / ChatGPT | Documentation, drafting, and translation | "Translate this analysis to professional English", "Improve the formatting of this markdown document" | Cross-checked the translated text to ensure it accurately reflected our actual CSV benchmark results and speedup calculations. | Adjusted the final phrasing to sound natural and integrated the text into the required Markdown structure. |
 
 Requirements:
 
