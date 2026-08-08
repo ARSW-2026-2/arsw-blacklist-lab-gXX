@@ -537,9 +537,9 @@ Each student must add an individual conclusion of 80 to 120 words.
 
 ### Student 1
 
-**Name:** Pending
+**Name:** Cristian Aristizabal
 
-> Replace this text with the individual conclusion.
+> The laboratory experiment clarified me that the best concurrency strategy depends entirely on the expected workload; it is not simply a matter of using a large number of threads. As observed during the tests involving I/O simulation, execution times were significantly faster with threads; however, in tests without I/O simulation, the sequential strategy performed much better yielding times of 0.080 compared to 0.873 for virtual threads. Consequently, we can conclude that virtual threads are preferable for large-scale operations involving independent blocking tasks, whereas the sequential strategy is the better choice for smaller-scale calculations.
 
 ### Student 2
 
